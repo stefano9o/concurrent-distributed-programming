@@ -50,10 +50,7 @@ public class SyncServer implements Runnable{
 		if(argv.length > 0) {
 			port = Integer.parseInt(argv[0]);
 		}
-		
-		int nThread = 10;
-		for (int i = 0; i < nThread; i++) {
-			(new Thread(new SyncServer(port))).start();
-		}
+
+		(new Thread(new SyncServer(port))).start();
 	}
 }
